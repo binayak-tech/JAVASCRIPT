@@ -8,5 +8,36 @@ function BMI(weight, height) {
 mass = 78;
 height = 1.69;
 
-const bmi = BMI(mass, height);
-console.log(`Your BMI = ${bmi.toFixed(2)}`); // toFixed() method is used to round the number of decimal places
+// const bmi = BMI(mass, height);
+// console.log(`Your BMI = ${bmi.toFixed(2)}`); // toFixed() method is used to round the number of decimal places
+
+// USING OBJECTS
+
+const Jhon = {
+  name: "Jhon Smith",
+  mass: 78,
+  height: 1.69,
+  calcBMI: () => {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+const Mark = {
+  name: "Mark Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: () => {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+
+Jhon.calcBMI();
+Mark.calcBMI();
+
+if (Jhon.bmi > Mark.bmi) {
+  console.log("Jhon has higher BMI than Mark");
+} else {
+  console.log("Mark has higher BMI ");
+}
